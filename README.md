@@ -43,9 +43,34 @@ All the examples may be installed using `pip`, making the examples available in 
 
         pip3 install pxgrid-pyshark
 
-# Configuration Examples
+# Configuration Steps
+1. Generate pxgrid client certificate and key (see below for detailed instructions)
+2. Store pxGrid certificates in same directory where script will be executed
+3. Configure SPAN / ERSPAN on switch infrastructure to point to collector -- recommend filtering ERSPAN traffic using template below
+4. Start the collector via cli with the following command (per pxgrid-util library):
+```
+pxgrid-pyshark \
+-a <hostname> \
+-n <nodename> \
+-c <pxgrid-client>.cer \
+-k <pxgrid-client>.key \
+-s <root_ca>.pem \
+--interface <interface_name>
+```
+Other optional arguments:
+```
+-p <cleartext>  Cleartext password for PEM file
+--verbose       Shows detailed logs as script runs.
+```
+Additional arguments can be added to override default values (**use with caution**):
+```
+--service <custom_pxgrid_service>
+--topic <custom_pxgrid_topic>
+--filter <wireshark_filter>
+```
+# ISE pxGrid Update Example
 
-Endpoint detail updates sent to ISE using the pxGrid 'context-in' API call in the following structure:
+Endpoint detail updates sent to ISE via pxgrid-pyshark use the pxGrid 'context-in' API call in the following structure:
 ```
 {
     "opType": "UPDATE",
@@ -64,28 +89,6 @@ Endpoint detail updates sent to ISE using the pxGrid 'context-in' API call in th
     }
 }
 ```
-# Configuration Steps
-1. Generate pxgrid client certificate and key (see below for detailed instructions)
-2. Store pxGrid certificates in same directory where script will be executed
-3. Start the collector via cli with the following command (per pxgrid-util library):
-```
-pxgrid-pyshark \
--a <hostname> \
--n <nodename> \
--c <pxgrid-client>.cer \
--k <pxgrid-client>.key \
--s <root_ca>.pem \
---interface <interface_name>
-```
-Optionally add the argument '--verbose' to show detailed logs as script runs.
-
-The following additional arguments can be added to override default values (**use with caution**):
-```
---service <custom_pxgrid_service>
---topic <custom_pxgrid_topic>
---filter <wireshark_filter>
-```
-
 # Configure ERSPAN data (example C9300 IOS-XE)
 ```
 (config)#ip access-list extended ERSPAN-ACL
@@ -118,7 +121,8 @@ Input local pcap(ng) file to be parsed: <file-location>/<file>.pcapng
 Input custom wireshark filter (leave blank to use built-in filter): 
 ```
 Once analysis is completed, all parsed endpoint data is displayed with the relevant "asset" attributes which would be used to update endpoints in ISE (ex. assetName, assetVendor, ...) 
-**Note** Running this pcap file test DOES NOT send any updates to ISE servers.
+
+**NOTE** Running this pcap file test DOES NOT send any updates to ISE servers.
 Example Output:
 ```
 #######################################
@@ -131,11 +135,10 @@ All Entries in the 'endpoints' table:
 ('28:56:5a:XX:XX:XX', 'mDNS', '192.168.1.132', '', 'Brother MFC-L5850DW series', 'Brother', 'Monochrome All-in-One Printer (2-sided, 42ppm)', '', 'usb_MDL=MFC-L5850DW series', '', '', 0, 80, 50, 80, 0, 80, 50, 0, '20:51:01', 0)
 ```
 
-
 # Limitations
 - Only inspects protocols listed above
 - Does not inspect IPv6 traffic
-- Recommend ISE 3.x+ version (3.2, 3.3 tested)
+- Recommend ISE 3.1+ version (3.2, 3.3 tested)
 
 # Other Points
 - Repository only contains code for deployment on collectors.  Custom profile definitions within ISE based on observed data and custom policy rule creation in ISE referencing custom profiles is the responsibility of the Network Adminstrator and is beyond the scope of this code.
