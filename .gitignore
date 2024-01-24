@@ -1,0 +1,15 @@
+## Distribution / packaging
+__pycache__/
+.vscode
+build/
+dist/
+test
+*.egg-info
+
+## Certificate example files
+ISE-pyshark.cer
+ISE-pyshark.key
+ISE33.cisco.local.pem
+
+## Locally created DB file
+endpoint_database.db

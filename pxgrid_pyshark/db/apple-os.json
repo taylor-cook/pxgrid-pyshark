@@ -1,0 +1,16 @@
+{
+    "osxvers=10":"macOS Snow Leopard",
+    "osxvers=11":"macOS Lion",
+    "osxvers=12":"macOS Mountain Lion",
+    "osxvers=13":"macOS Mavericks",
+    "osxvers=14":"macOS Yosemite",
+    "osxvers=15":"macOS El Capitan",
+    "osxvers=16":"macOS Sierra",
+    "osxvers=17":"macOS High Sierra",
+    "osxvers=18":"macOS Mojave",
+    "osxvers=19":"macOS Catalina",
+    "osxvers=20":"macOS Big Sur",
+    "osxvers=21":"macOS Monterey",
+    "osxvers=22":"macOS Ventura",
+    "osxvers=23":"macOS Sonoma"
+}

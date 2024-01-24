@@ -1,2 +1,1 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+pxgrid_pyshark/_version.py export-subst
