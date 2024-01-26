@@ -45,7 +45,7 @@ def process_packet(packet):
                 if fn is not None:
                     endpoints.update_db_list(fn(packet))
     except Exception as e:
-        logger.debug(f'error processing packet details {highest_layer}')
+        logger.debug(f'error processing packet details {highest_layer}: {e}')
 
 async def default_service_reregister_loop(config, pxgrid, service_id, reregister_delay):
     '''
