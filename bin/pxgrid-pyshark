@@ -31,16 +31,21 @@ packet_callbacks = {
 
 ## Process network packets using global Parser instance and dictionary of supported protocols
 def process_packet(packet):
-    highest_layer = packet.highest_layer
-    inspection_layer = str(highest_layer).split('_')[0]
-    ## If XML traffic included over HTTP, match on XML parsing
-    if inspection_layer == 'XML':
-        endpoints.update_db_list(parser.parse_xml(packet))
-    else:
-        for layer in packet.layers:
-            fn = packet_callbacks.get(layer.layer_name)
+    try:
+        highest_layer = packet.highest_layer
+        inspection_layer = str(highest_layer).split('_')[0]
+        ## If XML traffic included over HTTP, match on XML parsing
+        if inspection_layer == 'XML':
+            fn = parser.parse_xml(packet)
             if fn is not None:
-                endpoints.update_db_list(fn(packet))
+                endpoints.update_db_list(fn)
+        else:
+            for layer in packet.layers:
+                fn = packet_callbacks.get(layer.layer_name)
+                if fn is not None:
+                    endpoints.update_db_list(fn(packet))
+    except Exception as e:
+        logger.debug(f'error processing packet details {highest_layer}')
 
 async def default_service_reregister_loop(config, pxgrid, service_id, reregister_delay):
     '''
@@ -151,11 +156,20 @@ async def default_publish_loop(config, secret, pubsub_node_name, ws_url, topic):
     await ws.disconnect()
 
 def capture_live_packets(network_interface, filter):
-    capture = pyshark.LiveCapture(interface=network_interface, only_summaries=False, include_raw=True, use_json=True, display_filter=filter)
-    currentPacket = 0
-    for packet in capture.sniff_continuously():
-        process_packet(packet)
-        currentPacket += 1
+    try:
+        logger.debug(f'beginning live capture of {network_interface}')
+        capture = pyshark.LiveCapture(interface=network_interface, only_summaries=False, include_raw=True, use_json=True, display_filter=filter)
+        currentPacket = 0
+        for packet in capture.sniff_continuously():
+            ## Wrap individual packet processing within 'try' statement to avoid formatting issues crashing entire process
+            try:
+                process_packet(packet)
+            except Exception as e:
+                logger.debug(f'error processing packet: {currentPacket}: {e}')
+            currentPacket += 1
+    except Exception as e:
+        logger.warn(f'live capture process crashed: {e}')
+        sys.exit(1)
 
 if __name__ == '__main__':
     ## Parse all of the CLI options provided
@@ -293,14 +307,13 @@ if __name__ == '__main__':
     logger.debug('building databases complete')
 
     ## Begin the capture on the indicated interface (replace w/ relevant interface name)
-    logger.debug('begin live capture')
     capture_live_packets(capture_int, capture_filter)
 
     try:
         loop.run_until_complete(main_task)
     except:
         pass
-    logger.debug('### FINAL OUTPUT ###')
+    print('### FINAL OUTPUT ###')
 
     ## Provide output of all entries within local DB and stats for update messages
     endpoints.view_all_entries()

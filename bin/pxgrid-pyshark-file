@@ -22,16 +22,21 @@ packet_callbacks = {
 
 ## Process network packets using global Parser instance and dictionary of supported protocols
 def process_packet(packet):
-    highest_layer = packet.highest_layer
-    inspection_layer = str(highest_layer).split('_')[0]
-    ## If XML traffic included over HTTP, match on XML parsing
-    if inspection_layer == 'XML':
-        endpoints.update_db_list(parser.parse_xml(packet))
-    else:
-        for layer in packet.layers:
-            fn = packet_callbacks.get(layer.layer_name)
+    try:
+        highest_layer = packet.highest_layer
+        inspection_layer = str(highest_layer).split('_')[0]
+        ## If XML traffic included over HTTP, match on XML parsing
+        if inspection_layer == 'XML':
+            fn = parser.parse_xml(packet)
             if fn is not None:
-                endpoints.update_db_list(fn(packet))
+                endpoints.update_db_list(fn)
+        else:
+            for layer in packet.layers:
+                fn = packet_callbacks.get(layer.layer_name)
+                if fn is not None:
+                    endpoints.update_db_list(fn(packet))
+    except Exception as e:
+        logger.debug(f'error processing packet details {highest_layer}')
 
 ## Process a given PCAP(NG) file with a provided PCAP filter
 def process_capture_file(capture_file, capture_filter):
@@ -44,8 +49,6 @@ def process_capture_file(capture_file, capture_filter):
             ## Wrap individual packet processing within 'try' statement to avoid formatting issues crashing entire process
             try:
                 process_packet(packet)
-                # print(f'Packet# {currentPacket}, {packet.highest_layer}')
-                # i = 1
             except TypeError as e:
                 logger.debug(f'Error processing packet: {capture_file}, packet # {currentPacket}: TypeError: {e}')
             currentPacket += 1
@@ -54,17 +57,6 @@ def process_capture_file(capture_file, capture_filter):
         logger.debug(f'processing capture file complete: execution time: {end_time - start_time:0.6f} : {currentPacket} packets processed ##')
     else:
         logger.debug(f'capture file not found: {capture_file}')
-
-# ## Process network traffic received on a given interface with the provided PCAP filter
-# def capture_live_packets(network_interface, filter):
-#     capture = pyshark.LiveCapture(interface=network_interface, only_summaries=False, include_raw=True, use_json=True, display_filter=filter)
-#     currentPacket = 0
-#     for packet in capture.sniff_continuously():
-#         try:
-#             process_packet(packet)
-#         except TypeError as e:
-#             logger.debug(f'Error processing packet. TypeError: {e}')
-#         currentPacket += 1
 
 if __name__ == '__main__':
     ## Create the local DB file for storing parsed packets

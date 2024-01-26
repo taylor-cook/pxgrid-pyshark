@@ -38,8 +38,9 @@ The code included in this repository should be deployed on "collectors" througho
 All the examples may be installed using `pip`, making the examples available in your environment.
 
 1. Have **Python 3.11 or later** available on your system
+2. Install the [tshark package (or the full Wireshark package)](https://tshark.dev/setup/install/)
 3. Optionally (**but strongly recommended**) create a virtual environment using **python venv**
-4. Install the module using pip:
+4. Install the pxgrid-pyshark module using pip:
 
         pip3 install pxgrid-pyshark
 
@@ -68,6 +69,9 @@ Additional arguments can be added to override default values (**use with caution
 --topic <custom_pxgrid_topic>
 --filter <wireshark_filter>
 ```
+**NOTE** Linux users will need to run as sudo due to live updates to pxgrid-pyshark pkg files
+
+
 # ISE pxGrid Update Example
 
 Endpoint detail updates sent to ISE via pxgrid-pyshark use the pxGrid 'context-in' API call in the following structure:
