@@ -6,6 +6,8 @@ import logging
 import sys
 import json
 import netifaces
+import os
+import psutil
 from pxgrid_pyshark import endpointsdb
 from pxgrid_pyshark import parser
 from pxgrid_util import WebSocketStomp
@@ -16,9 +18,11 @@ from websockets.exceptions import WebSocketException
 from signal import SIGINT, SIGTERM
 
 logger = logging.getLogger(__name__)
-# default_filter = '!ipv6 && (ssdp || (http && http.user_agent != "") || sip || xml || (mdns && dns.resp.type == 16))'
-default_filter = '!ipv6 && (ssdp || (http && http.user_agent != "") || sip || (mdns && dns.resp.type == 16))'
+
+default_bpf_filter = "(tcp port 80 || tcp port 8080 || udp port 1900 || udp port 5060 || udp port 5353) and not ip6"
 parser = parser()
+capture_running = False
+capture_count = 0
 
 ## Create dict of supported protocols and their appropriate inspection functions
 packet_callbacks = {
@@ -29,24 +33,79 @@ packet_callbacks = {
     'xml': parser.parse_xml
 }
 
+## Return a list of processes matching 'name' (https://psutil.readthedocs.io/en/latest/)
+def find_procs_by_name(name):
+    ls = []
+    for p in psutil.process_iter(['name']):
+        # if p.info['name'] == name:
+        if name in p.info['name']:
+            ls.append(p )
+    return ls
+
+## Kill a process based on provided PID value (https://psutil.readthedocs.io/en/latest/)
+def kill_proc_tree(pid, sig=SIGTERM, include_parent=True, timeout=None, on_terminate=None):
+    assert pid != os.getpid(), "won't kill myself"
+    parent = psutil.Process(pid)
+    children = parent.children(recursive=True)
+    if include_parent:
+        children.append(parent)
+    for p in children:
+        try:
+            p.send_signal(sig)
+        except psutil.NoSuchProcess:
+            pass
+    gone, alive = psutil.wait_procs(children, timeout=timeout,
+                                    callback=on_terminate)
+    return (gone, alive)
+
+## Wrap the search and kill process functions into single call
+def proc_cleanup(proc_name):
+    proc_check = find_procs_by_name(proc_name)
+    if len(proc_check) > 0:
+        for item in proc_check:
+            logger.warning(f'orphaned {item._name} proc: {item.pid}')
+            proc_kill = kill_proc_tree(item.pid)
+            if len(proc_kill) > 0:
+                if f"{item.pid}, status='terminated'" in str(proc_kill):
+                    logger.warning(f'orphaned proc {item.pid} terminated')
+
 ## Process network packets using global Parser instance and dictionary of supported protocols
 def process_packet(packet):
     try:
         highest_layer = packet.highest_layer
-        inspection_layer = str(highest_layer).split('_')[0]
-        ## If XML traffic included over HTTP, match on XML parsing
-        if inspection_layer == 'XML':
-            fn = parser.parse_xml(packet)
-            if fn is not None:
-                endpoints.update_db_list(fn)
-        else:
-            for layer in packet.layers:
-                fn = packet_callbacks.get(layer.layer_name)
+        ## Avoids any UDP/TCP.SEGMENT reassemblies and raw UDP/TCP packets
+        if '_' in highest_layer and highest_layer != 'DATA_RAW':        
+            inspection_layer = str(highest_layer).split('_')[0]
+            ## If XML traffic included over HTTP, match on XML parsing
+            if inspection_layer == 'XML':
+                fn = parser.parse_xml(packet)
                 if fn is not None:
-                    endpoints.update_db_list(fn(packet))
+                    endpoints.update_db_list(fn)
+            else:
+                for layer in packet.layers:
+                    fn = packet_callbacks.get(layer.layer_name)
+                    if fn is not None:
+                        endpoints.update_db_list(fn(packet))
     except Exception as e:
         logger.debug(f'error processing packet details {highest_layer}: {e}')
 
+def capture_live_packets(network_interface, bpf_filter):
+    global capture_count
+    currentPacket = 0
+    capture = pyshark.LiveCapture(interface=network_interface, bpf_filter=bpf_filter, include_raw=True, use_json=True, output_file='/tmp/pyshark.pcapng')
+    logger.debug(f'beginning capture instance to file: {capture._output_file}')
+    for packet in capture.sniff_continuously(packet_count=1000):
+        try:
+            process_packet(packet)
+            currentPacket += 1
+        except Exception as e:
+            logger.debug(f'error processing packet {e}')
+    capture.close()
+    logger.debug(f'stopping capture instance')
+    ## Check for any orphaned 'dumpcap' processes from pyshark still running from old instance, and terminate them
+    proc_cleanup('dumpcap')
+    capture_count += 1
+        
 async def default_service_reregister_loop(config, pxgrid, service_id, reregister_delay):
     '''
     Simple custom service reregistration to keep things alive.
@@ -155,22 +214,6 @@ async def default_publish_loop(config, secret, pubsub_node_name, ws_url, topic):
     await asyncio.sleep(2.0)
     await ws.disconnect()
 
-def capture_live_packets(network_interface, filter):
-    try:
-        logger.debug(f'beginning live capture of {network_interface}')
-        capture = pyshark.LiveCapture(interface=network_interface, only_summaries=False, include_raw=True, use_json=True, display_filter=filter)
-        currentPacket = 0
-        for packet in capture.sniff_continuously():
-            ## Wrap individual packet processing within 'try' statement to avoid formatting issues crashing entire process
-            try:
-                process_packet(packet)
-            except Exception as e:
-                logger.debug(f'error processing packet: {currentPacket}: {e}')
-            currentPacket += 1
-    except Exception as e:
-        logger.warn(f'live capture process crashed: {e}')
-        sys.exit(1)
-
 if __name__ == '__main__':
     ## Parse all of the CLI options provided
     config = Config()
@@ -181,11 +224,7 @@ if __name__ == '__main__':
         '--interface',
         help='Network interface receiving traffic to be analyzed')
     g = config.parser.add_mutually_exclusive_group(required=False)
-    g.add_argument(
-        '--filter', 
-        help='Wireshark-formatted filter to be applied to received traffic',
-        default=default_filter)
-
+    ## Process all arguments to the config class
     config.parse_args()
 
     ## Verbose logging if configured
@@ -227,11 +266,8 @@ if __name__ == '__main__':
             sys.exit(1)
         logger.debug(f'using capture interface = {capture_int}')
     
-    capture_filter = config.config.filter
-    logger.debug(f'using capture filter = {capture_filter}')
     config.parse_args()    
     
-
     ## Setup pxGrid control object
     pxgrid = PXGridControl(config=config)
     ## Ensure account provided is approved in ISE UI
@@ -295,8 +331,10 @@ if __name__ == '__main__':
 
     ## Setup sigint/sigterm handlers
     def signal_handlers():
+        global capture_running
         main_task.cancel()
         reregister_task.cancel()
+        capture_running = False
     loop = asyncio.get_event_loop()
     loop.add_signal_handler(SIGINT, signal_handlers)
     loop.add_signal_handler(SIGTERM, signal_handlers)
@@ -307,7 +345,18 @@ if __name__ == '__main__':
     logger.debug('building databases complete')
 
     ## Begin the capture on the indicated interface (replace w/ relevant interface name)
-    capture_live_packets(capture_int, capture_filter)
+    capture_running = True
+
+    try:
+        while capture_running:
+            try:
+                capture_live_packets(capture_int, default_bpf_filter)
+            except Exception as e:
+                logging.warning(f'error with capture instance: {e}')
+    except KeyboardInterrupt:
+        logging.warning('closing capture down due to keboard interrupt')
+        capture_running = False
+        sys.exit(0)
 
     try:
         loop.run_until_complete(main_task)

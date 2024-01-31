@@ -67,7 +67,6 @@ Additional arguments can be added to override default values (**use with caution
 ```
 --service <custom_pxgrid_service>
 --topic <custom_pxgrid_topic>
---filter <wireshark_filter>
 ```
 **NOTE** Linux users will need to run as sudo due to live updates to pxgrid-pyshark pkg files
 
@@ -122,7 +121,7 @@ Peform a test analysis on an existing wirecapture file
 pxgrid-pyshark-file
 
 Input local pcap(ng) file to be parsed: <file-location>/<file>.pcapng
-Input custom wireshark filter (leave blank to use built-in filter): 
+Input custom wireshark display filter (leave blank to use built-in display filter): 
 ```
 Once analysis is completed, all parsed endpoint data is displayed with the relevant "asset" attributes which would be used to update endpoints in ISE (ex. assetName, assetVendor, ...) 
 

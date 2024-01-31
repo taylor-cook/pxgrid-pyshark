@@ -13,3 +13,6 @@ ISE33.cisco.local.pem
 
 ## Locally created DB file
 endpoint_database.db
+
+## Other files
+pxgrid_pyshark/capture.py

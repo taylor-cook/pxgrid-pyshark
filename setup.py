@@ -43,6 +43,7 @@ setup (
     download_url='https://github.com/taylor-cook/pxgrid-pyshark',
     install_requires=[
         'netifaces>=0.10.7',
+        'psutil>=5.9.8',
         'pxgrid-util>=0.6.0',
         'pyshark>=0.6',
         'requests>=2.31.0',
