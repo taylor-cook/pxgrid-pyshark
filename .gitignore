@@ -16,3 +16,4 @@ endpoint_database.db
 
 ## Other files
 pxgrid_pyshark/capture.py
+user-agents/

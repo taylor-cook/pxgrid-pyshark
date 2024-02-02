@@ -19,10 +19,11 @@ from signal import SIGINT, SIGTERM
 
 logger = logging.getLogger(__name__)
 
-default_bpf_filter = "(tcp port 80 || tcp port 8080 || udp port 1900 || udp port 5060 || udp port 5353) and not ip6"
+default_bpf_filter = "(ip proto 0x2f || tcp port 80 || tcp port 8080 || udp port 1900 || udp port 5060 || udp port 5353) and not ip6"
 parser = parser()
 capture_running = False
 capture_count = 0
+skipped_packet = 0
 
 ## Create dict of supported protocols and their appropriate inspection functions
 packet_callbacks = {
@@ -46,12 +47,15 @@ def find_procs_by_name(name):
 def kill_proc_tree(pid, sig=SIGTERM, include_parent=True, timeout=None, on_terminate=None):
     assert pid != os.getpid(), "won't kill myself"
     parent = psutil.Process(pid)
+    # print(f'parent: {parent}')
     children = parent.children(recursive=True)
+    # print(f'child: {children}')
     if include_parent:
         children.append(parent)
     for p in children:
         try:
             p.send_signal(sig)
+            # print(f'sending terminate signal')
         except psutil.NoSuchProcess:
             pass
     gone, alive = psutil.wait_procs(children, timeout=timeout,
@@ -70,11 +74,10 @@ def proc_cleanup(proc_name):
                     logger.warning(f'orphaned proc {item.pid} terminated')
 
 ## Process network packets using global Parser instance and dictionary of supported protocols
-def process_packet(packet):
+def process_packet(packet, highest_layer):
     try:
-        highest_layer = packet.highest_layer
         ## Avoids any UDP/TCP.SEGMENT reassemblies and raw UDP/TCP packets
-        if '_' in highest_layer and highest_layer != 'DATA_RAW':        
+        if '_' in highest_layer:        
             inspection_layer = str(highest_layer).split('_')[0]
             ## If XML traffic included over HTTP, match on XML parsing
             if inspection_layer == 'XML':
@@ -90,19 +93,24 @@ def process_packet(packet):
         logger.debug(f'error processing packet details {highest_layer}: {e}')
 
 def capture_live_packets(network_interface, bpf_filter):
-    global capture_count
+    global capture_count, skipped_packet
     currentPacket = 0
     capture = pyshark.LiveCapture(interface=network_interface, bpf_filter=bpf_filter, include_raw=True, use_json=True, output_file='/tmp/pyshark.pcapng')
     logger.debug(f'beginning capture instance to file: {capture._output_file}')
-    for packet in capture.sniff_continuously(packet_count=1000):
+    for packet in capture.sniff_continuously(packet_count=20000):
         try:
-            process_packet(packet)
+            highest_layer = packet.highest_layer
+            if highest_layer not in ['DATA_RAW', 'TCP_RAW', 'UDP_RAW', 'JSON_RAW', 'DATA-TEXT-LINES_RAW', 'IMAGE-GIF_RAW', 'IMAGE-JFIF_RAW', 'PNG-RAW']:
+                process_packet(packet, highest_layer)
+            else:
+                skipped_packet += 1
             currentPacket += 1
         except Exception as e:
-            logger.debug(f'error processing packet {e}')
+            logger.warning(f'error processing packet {e}')
     capture.close()
     logger.debug(f'stopping capture instance')
     ## Check for any orphaned 'dumpcap' processes from pyshark still running from old instance, and terminate them
+    time.sleep(1)
     proc_cleanup('dumpcap')
     capture_count += 1
         
@@ -363,7 +371,7 @@ if __name__ == '__main__':
     except:
         pass
     print('### FINAL OUTPUT ###')
-
+    print(f'skipped packets {skipped_packet}')
     ## Provide output of all entries within local DB and stats for update messages
     endpoints.view_all_entries()
     endpoints.view_stats()

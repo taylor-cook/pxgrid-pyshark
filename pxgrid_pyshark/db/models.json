@@ -475,7 +475,8 @@
         "model=8617X":"32in Sanyo Roku TV"
     },
     "Google":{
-        "md=Google Home":"Google Home"
+        "md=Google Home":"Google Home",
+        "md=Google Home Mini":"Google Home Mini"
     },
     "HP":{
         "usb_MDL=Color LaserJet Pro M478f-9f":"HP Color LaserJet Pro MFP M478f-9f",
@@ -487,13 +488,36 @@
     "Microsoft":{
         "md=XboxOne":"Xbox One"
     },
+    "Murata Manufacturing":{
+        "SM-G975U":"Galaxy S10 Plus",
+        "SM-G975U1":"Galaxy S10 Plus (128GB)",
+        "SM-G975U2":"Galaxy S10 Plus",
+        "SM-G975UC":"Galaxy S10 Plus"
+    },
     "NVIDIA":{
         "md=SHIELD Android TV":"SHIELD Android TV"
     },
     "Resideo":{
+        "md=RCH9310WF5003":"Honeywell Round Smart Thermostat",
+        "md=RTH9580WF1005":"Honeywell Wifi  Smart Thermostat",
+        "md=RTH8580WF1007":"Honeywell Wifi Touchscreen Thermostat",
+        "md=RTH8800WF2022":"Honeywell T5 Smart Thermostat",
+        "md=RTH8800WF2022/U":"Honeywell T5 Smart Thermostat",
         "md=TH6320WF2003":"Honeywell T6 Pro Smart Thermostat",
         "md=TH6220WF2006":"Honeywell T6 Pro Smart Thermostat",
-        "md=TH9320WF5003":"Honeywell 9000 Touchscreen Thermostat"
+        "md=TH9320WF5003":"Honeywell 9000 Touchscreen Thermostat",
+        "md=TH8321WF1001":"Honeywell VisionPro 8000 Wifi Thermostat",
+        "md=TH8321WF1001/U":"Honeywell VisionPro 8000 Wifi Thermostat",
+        "md=RCHT9510WFW2001":"Honeywell T9 Smart Thermostat",
+        "md=RCHT9510WFW2017":"Honeywell T9 Smart Thermostat (White)",
+        "md=RCHT9610WFSW2003":"Honeywell T9 Smart Thermostat w/ Sensor",
+        "md=RCHT9610WFSW2019":"Honeywell T9 Wifi Thermostat Remote (White) - Canada",
+        "md=THX321WF3003":"Honeywell T10+ Pro Smart Thermostat",
+        "md=THX321WF3003W/U":"Honeywell T10+ Pro Smart Thermostat",
+        "md=THX321WFS2001":"Honeywell T10 Pro Smart Thermostat w/o Sensor",
+        "md=THX321WFS2001W/U":"Honeywell T10 Pro Smart Thermostat w/ Indoor Air Sensor",
+        "md=THX321WFS3001":"Honeywell T10 Pro Smart Thermostat w/ Indoor Air Sensor",
+        "md=THX321WFS3001W/U":"Honeywell T10 Pro Smart Thermostat w/ Indoor Air Sensor"
     },
     "Roku":{
         "model=3960X":"Roku Express",
