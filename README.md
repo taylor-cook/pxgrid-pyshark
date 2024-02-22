@@ -30,6 +30,7 @@ The code included in this repository should be deployed on "collectors" througho
   - HTTP
   - SIP
   - XML
+  - SMB
 - Supported Traffic Ingest Methods
   - Switchport Analyzer (SPAN)
   - Encapsulated Remote SPAN (ERSPAN)
@@ -37,7 +38,7 @@ The code included in this repository should be deployed on "collectors" througho
 # Required Installation Steps:
 All the examples may be installed using `pip`, making the examples available in your environment.
 
-1. Have **Python 3.11 or later** available on your system
+1. Have **Python 3.8 or later** available on your system
 2. Install the [tshark package (or the full Wireshark package)](https://tshark.dev/setup/install/)
 3. Optionally (**but strongly recommended**) create a virtual environment using **python venv**
 4. Install the pxgrid-pyshark module using pip:

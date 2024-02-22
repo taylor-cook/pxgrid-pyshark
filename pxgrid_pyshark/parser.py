@@ -113,18 +113,27 @@ class parser:
 
     def parse_mac_ip(self, packet):
         try:
+            capwap_flag = False
             erspan_flag = False
             if 'erspan' in packet:
                 erspan_flag = True
-            if erspan_flag and packet['eth'].duplicate_layers:
+            if 'capwap.data' in packet and 'wlan' in packet:
+                capwap_flag = True
+
+            if capwap_flag:                                     ## If CAPWAP encapsulated traffic..
+                mac = packet['wlan'].sa                         ## grab the source address of the wireless traffic (endpoint)
+            elif erspan_flag and capwap_flag == False:          ## If ERSPAN traffic and not CAPWAP, grab inner ETH source address
                 mac = packet['eth'].duplicate_layers[0].src
-                vendor = get_OUI(mac, oui_manager)
             else:
-                mac = packet['eth'].src
-                vendor = get_OUI(mac, oui_manager)
-            ### TO DO: MODIFY ACCORDINGLY FOR IPV6 ###
-            if erspan_flag and packet['ip'].duplicate_layers:
-                ip = packet['ip'].duplicate_layers[0].src
+                mac = packet['eth'].src                         ## otherwise just use the ETH source address
+            vendor = get_OUI(mac, oui_manager)
+
+            if (erspan_flag or capwap_flag) and packet['ip'].duplicate_layers:
+                dup_count = len(packet['ip'].duplicate_layers)                  ## Determine how many duplicate IP layers there are
+                if capwap_flag:
+                    ip = packet['ip'].duplicate_layers[dup_count - 1].src       ## Grab the IP address from the innermost IP packet
+                else:
+                    ip = packet['ip'].duplicate_layers[0].src
             else:
                 ip = packet['ip'].src
             return mac, ip, vendor
@@ -302,10 +311,31 @@ class parser:
             ua_index = layer.msg_hdr.find("User-Agent")
             if ua_index != -1:
                 cr_index = layer.msg_hdr.find("\r\n",ua_index)
-                asset_values[10] = layer.msg_hdr[ua_index+12:cr_index]
-                asset_values[18] = 20
+                asset_values[8] = layer.msg_hdr[ua_index+12:cr_index]
+                asset_values[16] = 20
             return asset_values
         except AttributeError:
+            return None
+
+    def parse_smb_browser(self, packet):
+        mac, ip, vendor = self.parse_mac_ip(packet)
+        asset_values = ['']*11 + ['0']*8      # Create an empty list for potential values
+        
+        if mac is None:
+            return None
+        asset_values[0] = mac
+        asset_values[5] = vendor
+        if ip is not None:
+            asset_values[2] = ip
+        asset_values[1] = 'SMB'
+        try:
+            layer = packet['BROWSER']
+            if layer.command == '0x01':             #If SMB host announcement
+                asset_values[4] = layer.server      #record the hostname field and weighting
+                asset_values[12] = 80
+            return asset_values
+        except Exception as e:
+            logger.debug(f'Error for {asset_values[1]} packet from {asset_values[0]}: {e}')
             return None
 
     def parse_mdns(self, packet):

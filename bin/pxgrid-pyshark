@@ -19,7 +19,7 @@ from signal import SIGINT, SIGTERM
 
 logger = logging.getLogger(__name__)
 
-default_bpf_filter = "(ip proto 0x2f || tcp port 80 || tcp port 8080 || udp port 1900 || udp port 5060 || udp port 5353) and not ip6"
+default_bpf_filter = "(ip proto 0x2f || tcp port 80 || tcp port 8080 || udp port 1900 || udp port 138 || udp port 5060 || udp port 5353) and not ip6"
 parser = parser()
 capture_running = False
 capture_count = 0
@@ -27,11 +27,12 @@ skipped_packet = 0
 
 ## Create dict of supported protocols and their appropriate inspection functions
 packet_callbacks = {
+    'mdns': parser.parse_mdns,
+    'xml': parser.parse_xml,
     'sip': parser.parse_sip,
     'ssdp': parser.parse_ssdp,
-    'mdns': parser.parse_mdns,
     'http': parser.parse_http,
-    'xml': parser.parse_xml
+    'browser': parser.parse_smb_browser
 }
 
 ## Return a list of processes matching 'name' (https://psutil.readthedocs.io/en/latest/)
