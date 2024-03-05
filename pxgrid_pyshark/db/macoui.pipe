@@ -133,7 +133,6 @@ zte corporation|F43A7B
 zte corporation|689E29
 Cisco Systems, Inc|6C03B5
 Sophos Ltd|A89162
-Hewlett Packard Enterprise|B86CE0
 GUANGDONG OPPO MOBILE TELECOMMUNICATIONS CORP.,LTD|E44097
 GUANGDONG OPPO MOBILE TELECOMMUNICATIONS CORP.,LTD|DCB4CA
 Kaon Group Co., Ltd.|943BB1
@@ -835,7 +834,6 @@ Shenzhen OXO Technology limited|208097
 Sagemcom Broadband SAS|7C1689
 New platforms|5C83CD
 Intel Corporate|507C6F
-Hewlett Packard Enterprise|7CA62A
 Sichuan Tianyi Comheart Telecom Co.,LTD|305A99
 HUAWEI TECHNOLOGIES CO.,LTD|604DE1
 HUAWEI TECHNOLOGIES CO.,LTD|704E6B
@@ -1174,7 +1172,6 @@ Intel Corporate|F4B301
 Sagemcom Broadband SAS|E8D2FF
 MERCURY CORPORATION|0C96CD
 Kyung In Electronics|A03B01
-FCNT LMITED|18188B
 GUANGDONG OPPO MOBILE TELECOMMUNICATIONS CORP.,LTD|145E69
 D-Link International|A0A3F0
 New H3C Technologies Co., Ltd|846569
@@ -1841,7 +1838,6 @@ Texas Instruments|909A77
 Texas Instruments|04EE03
 Texas Instruments|4C2498
 Google, Inc.|7CD95C
-Hewlett Packard Enterprise|4CAEA3
 Suzhou Tremenet Communication Technology Co., Ltd.|1C2E1B
 Cisco Systems, Inc|00EEAB
 TP-LINK TECHNOLOGIES CO.,LTD.|54A703
@@ -1970,7 +1966,6 @@ Lenovo|A41194
 New H3C Technologies Co., Ltd|90E710
 Hillstone Networks Inc|302952
 DongGuan Siyoto Electronics Co., Ltd       |00B4F5
-Teleepoch Ltd|BC3F4E
 Intel Corporate|983B8F
 NXP (China) Management Ltd.|54278D
 Ruichi Auto Technology (Guangzhou) Co., Ltd.|0C4101
@@ -2016,7 +2011,6 @@ IEEE Registration Authority|8489EC
 INVENTEL|00073A
 INVENTEC CORPORATION|00266C
 INVENTEC CORPORATION|008CFA
-Hewlett Packard Enterprise|484AE9
 Sumitomo Kizai  Co.,Ltd.|846A66
 Shenzhen Jingxun Software Telecommunication Technology Co.,Ltd|5CFB7C
 Samsung Electronics Co.,Ltd|FC039F
@@ -2277,7 +2271,6 @@ PEGATRON CORPORATION|D45DDF
 Yanfeng Visteon Electronics Technology (Shanghai) Co.,Ltd.|F065C2
 Jiangsu Miter Technology Co.,Ltd.|70B7E2
 Blue Danube Systems, Inc|80B708
-Hewlett Packard Enterprise|808DB7
 BEGHELLI S.P.A|88D171
 Cambridge Industries(Group) Co.,Ltd.|A825EB
 Genexis B.V.|34E380
@@ -2342,7 +2335,6 @@ FORMIKE ELECTRONIC CO., LTD|FCEEE6
 Ericsson AB|98C5DB
 National Datacomputer|000589
 vivo Mobile Communication Co., Ltd.|3CA616
-Hewlett Packard Enterprise|24F27F
 AVM GmbH|BC0543
 Shenzhen One-Nine Intelligent Electronic Science and Technology Co., Ltd|3CC079
 Samsung Electronics Co.,Ltd|9CE063
@@ -2399,7 +2391,6 @@ Panasonic Corporation AVC Networks Company|CC7EE7
 Schneider Electric Fire & Security Oy|74F661
 Phicomm (Shanghai) Co., Ltd.|2CB21A
 Intel Corporate|E470B8
-Hewlett Packard Enterprise|20A6CD
 Apple, Inc.|00DB70
 Apple, Inc.|B8634D
 Philips Lifeline|24C42F
@@ -2605,7 +2596,6 @@ GUANGDONG OPPO MOBILE TELECOMMUNICATIONS CORP.,LTD|E44790
 Light Labs, Inc.|38454C
 NAKAYO Inc|F49651
 Comat AG|446246
-Hewlett Packard Enterprise|34FCB9
 AMPAK Technology, Inc.|CCB8A8
 IEEE Registration Authority|34049E
 Zebra Technologies Inc.|94FB29
@@ -2929,7 +2919,6 @@ HUAWEI TECHNOLOGIES CO.,LTD|9CE374
 Infiniband Trade Association |8850DD
 Riverbed Technology, Inc.|002550
 Baltic Latvian Universal Electronics LLC|FC55DC
-Hewlett Packard Enterprise|941882
 Belkin International Inc.|6038E0
 YOKOTE SEIKO CO., LTD.|8CD2E9
 Apple, Inc.|24F094
@@ -3019,7 +3008,6 @@ Apple, Inc.|80ED2C
 TCT mobile ltd|F03404
 Integrated Device Technology (Malaysia) Sdn. Bhd.|80D160
 KunTeng Inc.|60ACC8
-Hewlett Packard Enterprise|1C98EC
 Sonova AG|70661B
 NETGEAR|B07FB9
 Apple, Inc.|AC61EA
@@ -3555,7 +3543,6 @@ Hon Hai Precision Ind. Co.,Ltd.|681401
 Real Vision Technology Co.,Ltd.|AC1FD7
 HUAWEI TECHNOLOGIES CO.,LTD|68A828
 Apple, Inc.|CC20E8
-Hewlett Packard Enterprise|1402EC
 Intrising Networks, Inc.|E8DED6
 TRP Systems BV|DCDC07
 Hangzhou H3C Technologies Co., Limited|3891D5
@@ -6994,12 +6981,70 @@ Xiaomi Communications Co Ltd|6C483F
 Xiaomi Communications Co Ltd|3CAFB7
 Qingdao Haier Technology Co.,Ltd|540853
 Nestle Purina PetCare|BC0866
-Ruijie Networks Co.,LTD|E05D54
-TeraNXT Global India Pvt Ltd.|40BB56
 HUAWEI TECHNOLOGIES CO.,LTD|2CB68F
 HUAWEI TECHNOLOGIES CO.,LTD|C8D1A9
 Phyplus Technology (Shanghai) Co., Ltd|DC9B95
 Cisco Systems, Inc|4800B3
+Ruijie Networks Co.,LTD|E05D54
+TeraNXT Global India Pvt Ltd.|40BB56
+Apple, Inc.|40DA5C
+Apple, Inc.|5C9175
+Apple, Inc.|A0782D
+Apple, Inc.|D011E5
+TP-LINK CORPORATION PTE. LTD.|D84489
+FCNT LLC|18188B
+OnePlus Technology (Shenzhen) Co., Ltd|6C6016
+Flaircomm Microelectronics,Inc.|64FE15
+zte corporation|D86BFC
+Apple, Inc.|DC71D0
+Apple, Inc.|9CFA76
+Apple, Inc.|20FA85
+Apple, Inc.|9C1A25
+Garmin International|E04824
+Beijing Xiaomi Mobile Software Co., Ltd|44F770
+Hangzhou Huacheng Network Technology Co.,Ltd|A83162
+SHENZHEN BILIAN ELECTRONIC CO.，LTD|CC641A
+ZEASN TECHNOLOGY PRIVATE LIMITED|68B41E
+Edifier International|08F0B6
+Impulse Labs|C0555C
+Intel Corporate|A8595F
+ASUSTek COMPUTER INC.|CC28AA
+Shenzhen Neoway Technology Co.,Ltd.|3C9FCD
+Gantner Electronic GmbH|341453
+Wistron Neweb Corporation|DC4BA1
+Shenzhen Phaten Tech. LTD|34A6EF
+Great Talent Technology Limited|BC3F4E
+Hangzhou RunZhou Fiber Technologies Co.,Ltd|DC54AD
+FN-LINK TECHNOLOGY Ltd.|A89609
+TCT mobile ltd|841571
+Intel Corporate|E8BFB8
+Sagemcom Broadband SAS|B0924A
+CIG SHANGHAI CO LTD|540463
+Fiberhome Telecommunication Technologies Co.,LTD|882067
+Samsung Electronics Co.,Ltd|E85497
+Sidora Srl|1083B4
+Samsung Electronics Co.,Ltd|14E01D
+Samsung Electronics Co.,Ltd|40DE24
+Cisco Systems, Inc|F0D805
+IEEE Registration Authority|086332
+Arista Network, Inc.|B492FE
+Logitech Far East|4471B3
+Silicon Laboratories|403059
+Nokia Solutions and Networks GmbH & Co. KG|A4FCA1
+Alignment Engine Inc.|345A18
+Microsoft Corporation|B85C5C
+zte corporation|787E42
+Hewlett Packard Enterprise – WW Corporate Headquarters|B86CE0
+Hewlett Packard Enterprise – WW Corporate Headquarters|7CA62A
+Hewlett Packard Enterprise – WW Corporate Headquarters|4CAEA3
+Hewlett Packard Enterprise – WW Corporate Headquarters|484AE9
+Hewlett Packard Enterprise – WW Corporate Headquarters|808DB7
+Hewlett Packard Enterprise – WW Corporate Headquarters|24F27F
+Hewlett Packard Enterprise – WW Corporate Headquarters|20A6CD
+Hewlett Packard Enterprise – WW Corporate Headquarters|34FCB9
+Hewlett Packard Enterprise – WW Corporate Headquarters|941882
+Hewlett Packard Enterprise – WW Corporate Headquarters|1C98EC
+Hewlett Packard Enterprise – WW Corporate Headquarters|1402EC
 Extreme Networks Headquarters|000130
 Extreme Networks Headquarters|FC0A81
 Ruijie Networks Co.,LTD|00749C
@@ -8297,7 +8342,6 @@ Realme Chongqing Mobile Telecommunications Corp.,Ltd.|B43161
 AltoBeam (China) Inc.|B4FBE3
 Xiaomi Communications Co Ltd|188740
 Xiaomi Communications Co Ltd|341CF0
-Hewlett Packard Enterprise|5CED8C
 vivo Mobile Communication Co., Ltd.|30AFCE
 Senscomm Semiconductor Co., Ltd.|64F947
 FREEBOX SAS|DC00B0
@@ -8532,7 +8576,6 @@ Silicon Laboratories|842E14
 ALAMAR ELECTRONICS|0020E1
 Huawei Device Co., Ltd.|08F458
 Hamee Corp.|343794
-Hewlett Packard Enterprise|5CBA2C
 Mist Systems, Inc.|D4DC09
 Huizhou Foryou General Electronics Co., Ltd.|4410FE
 Hansgrohe|EC316D
@@ -8918,7 +8961,6 @@ ALPSALPINE CO,.LTD|38C096
 Hewlett Packard|C4346B
 Intel Corporate|48F17F
 ALPSALPINE CO,.LTD|002643
-Hewlett Packard Enterprise|004E35
 Innovation Wireless|1C3477
 FLEXTRONICS MANUFACTURING(ZHUHAI)CO.,LTD.|4CC7D6
 Ruckus Wireless|C80873
@@ -9051,7 +9093,6 @@ Audeze LLC|E049ED
 SYSWAVE CO., LTD|000157
 Aiwa Corporation|A8016D
 New H3C Technologies Co., Ltd|0440A9
-Hewlett Packard Enterprise|8030E0
 Amazon Technologies Inc.|244CE3
 devolo AG|B8BEF4
 Shenzhen Taikaida Technology Co., Ltd|58FDBE
@@ -9079,7 +9120,6 @@ Xiaomi Communications Co Ltd|E06267
 vivo Mobile Communication Co., Ltd.|70B7AA
 Siemens Home & Office Comm. Devices|0013A3
 Xiaomi Communications Co Ltd|082525
-Hewlett Packard Enterprise|B0B867
 Kinexon GmbH|84B31B
 Mercku|F8272E
 Espressif Inc.|CC50E3
@@ -9170,7 +9210,6 @@ TRnP KOREA Co Ltd|BCAB7C
 Marking System Technology Co., Ltd.|6C3838
 Xiaomi Communications Co Ltd|9C2EA1
 Fiberhome Telecommunication Technologies Co.,LTD|0C6ABC
-Hewlett Packard Enterprise|089734
 HUAWEI TECHNOLOGIES CO.,LTD|3CCD5D
 HUAWEI TECHNOLOGIES CO.,LTD|7C7668
 ABB Inc/Totalflow|001386
@@ -9212,7 +9251,6 @@ Megafone Limited|20365B
 ChongQing GuanFang Technology Co.,LTD|E8DE00
 Samsung Electronics Co.,Ltd|FC643A
 EQUIINET LTD.|003074
-Hewlett Packard Enterprise|EC9B8B
 HUMAX Co., Ltd.|B0B3AD
 Texas Instruments|40BD32
 Cisco Systems, Inc|CC8E71
@@ -9296,7 +9334,6 @@ Cisco Systems, Inc|F87B20
 ARRIS Group, Inc.|A89FEC
 New H3C Technologies Co., Ltd|38AD8E
 IEEE Registration Authority|34D0B8
-Hewlett Packard Enterprise|D06726
 SenRa Tech Pvt. Ltd|ECFAF4
 SNS Solutions, Inc.|0005FF
 Apple, Inc.|D88F76
@@ -9408,7 +9445,6 @@ AMIT, Inc.|005018
 Everspin Technologies, Inc.|FC2F6B
 HUAWEI TECHNOLOGIES CO.,LTD|101B54
 IEEE Registration Authority|7CBACC
-Hewlett Packard Enterprise|94F128
 Teltronic AG|540237
 Ruckus Wireless|E0107F
 Ruckus Wireless|C4017C
@@ -9479,7 +9515,6 @@ Alcatel-Lucent Enterprise|2CFAA2
 Alcatel-Lucent Enterprise|E8E732
 Sagemcom Broadband SAS|7C2664
 CADENCE DESIGN SYSTEMS INC|AC6B0F
-Hewlett Packard Enterprise|C8B5AD
 Texas Instruments|7C3866
 Texas Instruments|0C61CF
 Texas Instruments|9C1D58
@@ -9572,7 +9607,6 @@ Futura Mobility|68AF13
 zte corporation|681AB2
 Ridgeline Instruments|7CEBAE
 Super Micro Computer, Inc.|002590
-Hewlett Packard Enterprise|00FD45
 CRRC DALIAN R&D CO.,LTD.|24C1BD
 Cisco Systems, Inc|00A2EE
 Cisco Systems, Inc|0059DC
@@ -10182,7 +10216,6 @@ Apple, Inc.|E498D6
 NXP Semiconductors|006037
 ASSA ABLOY CÔTE PICARDE|DCC0EB
 Panda Wireless, Inc.|9CEFD5
-Fibocom Wireless Inc. |B436A9
 Shenzhen lnovance Technology Co.,Ltd.|70CA4D
 ARRIS Group, Inc.|001DD1
 ARRIS Group, Inc.|001DCF
@@ -13791,7 +13824,6 @@ New H3C Technologies Co., Ltd|D4A23D
 Espressif Inc.|D8132A
 ALT Co., Ltd.|9C1ECE
 Havis Inc.|001F9C
-LCFC(Hefei) Electronics Technology co., ltd|FC5CEE
 Espressif Inc.|806599
 HUMAX NETWORKS|BC9A8E
 Quectel Wireless Solutions Co.,Ltd.|502065
@@ -13930,13 +13962,66 @@ zte corporation|084473
 Shenzhen Neoway Technology Co.,Ltd.|B47748
 Apption Labs Ltd|90212E
 Private|50D448
-Ruijie Networks Co.,LTD|FC599F
-Texas Instruments|A45C25
-Texas Instruments|98F487
 HUAWEI TECHNOLOGIES CO.,LTD|943589
 HUAWEI TECHNOLOGIES CO.,LTD|94261D
+Texas Instruments|A45C25
+Texas Instruments|98F487
+Ruijie Networks Co.,LTD|FC599F
 Arcadyan Corporation|84A329
 Cisco Systems, Inc|9C098B
+Apple, Inc.|9C5884
+Apple, Inc.|24B339
+Nanjing Qinheng Microelectronics Co., Ltd.|E04E7A
+Hui Zhou Gaoshengda Technology Co.,LTD|D07602
+Cisco Meraki|6CEFBD
+PROX SG Pte Ltd|84821B
+TPV Display Technology (Xiamen) Co.,Ltd.|94BDBE
+EM Microelectronic|940BFA
+IEEE Registration Authority|80A579
+TP-LINK TECHNOLOGIES CO.,LTD.|743989
+Qidi Technology (shanghai) Co.,Ltd.|283984
+Sinepower Lda|5CFA5A
+Fantasia Trading LLC|F49D8A
+Shanghai Notion lnformatio Technology Co.,Ltd.|7C992E
+Chengdu Yocto Communication Technology Co.Ltd.|8CEA88
+Intel Corporate|105FAD
+Intel Corporate|4CB04A
+NXP Semiconductor (Tianjin) LTD.|40EEBE
+ALPSALPINE CO,.LTD|FC9816
+Intel Corporate|E08F4C
+Daimler Truck AG|54726E
+Samsung Electronics Co.,Ltd|3C0A7A
+Samsung Electronics Co.,Ltd|2424B7
+Samsung Electronics Co.,Ltd|F0051B
+Samsung Electronics Co.,Ltd|BCA080
+Samsung Electronics Co.,Ltd|002B70
+Cisco Systems, Inc|C44606
+LCFC(HeFei) Electronics Technology co., ltd|FC5CEE
+Fiberhome Telecommunication Technologies Co.,LTD|88659F
+Aruba, a Hewlett Packard Enterprise Company|ECFCC6
+Fibocom Wireless Inc.|B436A9
+BSH Hausgeräte GmbH|942770
+Intelbras|AC1EA9
+Cisco Systems, Inc|487410
+LEAPS s.r.o.|80E94A
+Juniper Networks|588670
+Juniper Networks|9C5A80
+zte corporation|58FE7E
+Arcadyan Corporation|34194D
+ifanr Inc|6C80AB
+Shenzhen Jingxun Technology Co., Ltd.|20185B
+Hewlett Packard Enterprise – WW Corporate Headquarters|5CED8C
+Hewlett Packard Enterprise – WW Corporate Headquarters|5CBA2C
+Hewlett Packard Enterprise – WW Corporate Headquarters|004E35
+Hewlett Packard Enterprise – WW Corporate Headquarters|8030E0
+Hewlett Packard Enterprise – WW Corporate Headquarters|B0B867
+Hewlett Packard Enterprise – WW Corporate Headquarters|089734
+Hewlett Packard Enterprise – WW Corporate Headquarters|EC9B8B
+Hewlett Packard Enterprise – WW Corporate Headquarters|D06726
+Hewlett Packard Enterprise – WW Corporate Headquarters|94F128
+Hewlett Packard Enterprise – WW Corporate Headquarters|C8B5AD
+Hewlett Packard Enterprise – WW Corporate Headquarters|00FD45
+Software Freedom Conservancy|2817CB
 New H3C Technologies Co., Ltd|6C8720
 RADiflow|0C8D7A
 Xiaomi Communications Co Ltd|FCA9F5
@@ -14193,7 +14278,6 @@ Rockwell Automation|5C2167
 Chongqing Yipingfang Technology Co., Ltd.|6C8F4E
 Recogni Inc|34AFA3
 Chongqing Yipingfang Technology Co., Ltd.|DC9EAB
-Hewlett Packard Enterprise|489ECB
 Cisco Systems, Inc|4891D5
 Motorola (Wuhan) Mobility Technologies Communication Co., Ltd.|E01FFC
 AzureWave Technology Inc.|CC4740
@@ -15501,7 +15585,6 @@ ARRIS Group, Inc.|ECA940
 Axonne Inc.|FC8596
 Inspur Software Group Ltd.|5CB4E2
 CANON INC.|349F7B
-Hewlett Packard Enterprise|B47AF1
 Cisco Systems, Inc|6C410E
 Amazon Technologies Inc.|149138
 Motorola Mobility LLC, a Lenovo Company|08CC27
@@ -15722,7 +15805,6 @@ zte corporation|5078B3
 varram system|F0D4F7
 HUAWEI TECHNOLOGIES CO.,LTD|E0CC7A
 Wingtech Group (HongKong）Limited|B02A1F
-Hewlett Packard Enterprise|DC680C
 Texas Instruments|5893D8
 Texas Instruments|5051A9
 HUAWEI TECHNOLOGIES CO.,LTD|F47960
@@ -15846,7 +15928,6 @@ FUJIAN STAR-NET COMMUNICATION CO.,LTD|2875D8
 George Robotics Limited|484A30
 Texas Instruments|90E202
 Tianjin Beebox Intelligent Technology Co.,Ltd.|4CE5AE
-FCNT LMITED|E4D3AA
 Kelvin Inc.|F4C7C8
 SHENZHEN GONGJIN ELECTRONICS CO.,LT|80546A
 Earda Technologies co Ltd|B447F5
@@ -16115,7 +16196,6 @@ SHENZHEN BILIAN ELECTRONIC CO.，LTD|146B9C
 Oetiker Schweiz AG|948DEF
 ARRIS Group, Inc.|240A63
 ARRIS Group, Inc.|F88B37
-Hewlett Packard Enterprise|20677C
 Integrated Device Technology (Malaysia) Sdn. Bhd.|8817A3
 IEEE Registration Authority|88A9A7
 Texas Instruments|3403DE
@@ -16408,7 +16488,6 @@ Zyxel Communications Corporation|5C6A80
 Guangdong Global Electronic Technology CO.，LTD|D860B3
 e-CON SYSTEMS INDIA PVT LTD|64351C
 Beijing Chushang Science and Technology Co.,Ltd|A8D579
-Hewlett Packard Enterprise|4448C1
 Sandstone Technologies|605317
 nextLAP GmbH|60BA18
 ShenZhen IDWELL Technology CO.,Ltd|84CD62
@@ -16780,7 +16859,6 @@ LG Electronics (Mobile Communications)|64899A
 LG Electronics (Mobile Communications)|F8A9D0
 LG Electronics (Mobile Communications)|CCFA00
 IEEE Registration Authority|001BC5
-Hewlett Packard Enterprise|48DF37
 QPSX COMMUNICATIONS, LTD.|000031
 QLogic Corporation|000E1E
 Samsung Electronics Co.,Ltd|E45D75
@@ -17048,7 +17126,6 @@ ARRIS Group, Inc.|7CBFB1
 ARRIS Group, Inc.|002636
 ARRIS Group, Inc.|002136
 ARRIS Group, Inc.|001626
-Hewlett Packard Enterprise|E8F724
 ADB Broadband Italia|E874E6
 Actiontec Electronics, Inc|0020E0
 Actiontec Electronics, Inc|002662
@@ -17894,7 +17971,6 @@ KERNEL-I Co.,LTD|841E26
 Private|DC7014
 ImTech Technologies LLC,|50B8A2
 Fresenius Medical Care Deutschland GmbH|B04C05
-Lokel s.r.o.|5CA3EB
 Shanghai iComhome Co.,Ltd.|E4F3E3
 Private|0086A0
 China Palms Telecom.Ltd|60FE1E
@@ -20925,14 +21001,51 @@ Shenzhen Uascent Technology Co.,Ltd|8C87D0
 Edgecore Americas Networking Corporation|5C1783
 EVBox BV|7CBAC0
 Private|98256E
-zte corporation|60E5D8
 Wu Qi Technologies,Inc.|D413B3
 Texas Instruments|647060
 Texas Instruments|00AAFD
-Texas Instruments|0C4BEE
-HUAWEI TECHNOLOGIES CO.,LTD|7CB59F
+zte corporation|60E5D8
 Feitian Technologies Co., Ltd|5435E9
+HUAWEI TECHNOLOGIES CO.,LTD|7CB59F
 Cisco Systems, Inc|505C88
+Texas Instruments|0C4BEE
+HP Inc.|30138B
+Guangdong Seneasy Intelligent Technology Co., Ltd.|606832
+Shenzhen Stellamore Technology Co.,Ltd|8433F2
+AzureWave Technology Inc.|28D043
+FCNT LLC|E4D3AA
+Apple, Inc.|B0D576
+Apple, Inc.|142876
+Apple, Inc.|147FCE
+Cisco Meraki|6CC3B2
+ZHEJIANG DAHUA TECHNOLOGYCO.,LTD|F8CE07
+AltoBeam Inc.|2098ED
+Chipsea Technologies (Shenzhen) Corp.|F88FC8
+TP-LINK TECHNOLOGIES CO.,LTD.|4C10D5
+Kaon Group Co., Ltd.|983910
+NXP Semiconductor (Tianjin) LTD.|804C5D
+Indyme Solutions, LLC|289176
+Intel Corporate|28A06B
+Infinix mobility limited|7C8BC1
+TECNO MOBILE LIMITED|3CCA61
+Hangzhou Hikvision Digital Technology Co.,Ltd.|ECA971
+AVM Audiovisuelles Marketing und Computersysteme GmbH|E00855
+Acres Manufacturing|68A2AA
+Realme Chongqing Mobile Telecommunications Corp.,Ltd.|88AE35
+Zyxel Communications Corporation|7049A2
+Samsung Electronics Co.,Ltd|A07D9C
+Raytron Photonics Co.,Ltd.|F8C3F1
+Taiwan Digital Streaming Co.|D89563
+Wacom Co.,Ltd.|E8A848
+Hewlett Packard Enterprise – WW Corporate Headquarters|B47AF1
+Hewlett Packard Enterprise – WW Corporate Headquarters|DC680C
+Hewlett Packard Enterprise – WW Corporate Headquarters|20677C
+Hewlett Packard Enterprise – WW Corporate Headquarters|489ECB
+SKODA DIGITAL s.r.o.|5CA3EB
+ISPEC|5CBE05
+Hewlett Packard Enterprise – WW Corporate Headquarters|4448C1
+Hewlett Packard Enterprise – WW Corporate Headquarters|48DF37
+Hewlett Packard Enterprise – WW Corporate Headquarters|E8F724
 Quectel Wireless Solutions Co.,Ltd.|B00C9D
 zte corporation|F0AB1F
 zte corporation|7CB30A
@@ -21215,7 +21328,6 @@ Xiaoniu network technology (Shanghai) Co., Ltd.|5488FE
 YAMAHA CORPORATION|F4D580
 Aruba, a Hewlett Packard Enterprise Company|A852D4
 Exascend, Inc.|5030F4
-LYOTECH LABS LLC|DCECE3
 Rockwell Automation|E49069
 Rockwell Automation|184C08
 Visteon Corporation|FC35E6
@@ -22322,7 +22434,6 @@ China Dragon Technology Limited|40AA56
 Intel Corporate|68545A
 WEIFANG GOERTEK ELECTRONICS CO.,LTD|4CB99B
 Samsung Electronics Co.,Ltd|BC7E8B
-Hewlett Packard Enterprise|54778A
 Renesas Electronics (Penang) Sdn. Bhd.|9C6B37
 Huawei Device Co., Ltd.|A83759
 Huawei Device Co., Ltd.|50F7ED
@@ -22632,7 +22743,6 @@ Huawei Device Co., Ltd.|ACBD70
 HUAWEI TECHNOLOGIES CO.,LTD|30E98E
 HUAWEI TECHNOLOGIES CO.,LTD|C4447D
 DWnet Technologies(Suzhou) Corporation|70F82B
-Hewlett Packard Enterprise|D4F5EF
 LG Innotek|44CB8B
 Inspur Electronic Information Industry Co.,Ltd.|B4055D
 Silicon Laboratories|EC1BBD
@@ -22880,7 +22990,6 @@ Amazon Technologies Inc.|CC9EA2
 ALPSALPINE CO,.LTD|001BFB
 NAGTECH LLC|8CAEDB
 DWnet Technologies(Suzhou) Corporation|78B213
-Hewlett Packard Enterprise|08F1EA
 ASKEY COMPUTER CORP|7CDB98
 Texas Instruments|380B3C
 TOSHIBA CLIENT SOLUTIONS CO., LTD.|6845F1
@@ -22910,7 +23019,6 @@ Apple, Inc.|40BC60
 Apple, Inc.|E83617
 Apple, Inc.|9C648B
 Apple, Inc.|344262
-Hewlett Packard Enterprise|9C8CD8
 Wyze Labs Inc|2CAA8E
 Xiaomi Communications Co Ltd|703A51
 Apple, Inc.|14D00D
@@ -22957,7 +23065,6 @@ D-Link International|00AD24
 Ningbo Deli Kebei Technology Co.LTD|54068B
 iBASE Gaming Inc|549FAE
 Cisco Systems, Inc|00EABD
-Hewlett Packard Enterprise|548028
 CANON INC.|74BFC0
 Technicolor Delivery Technologies Belgium NV|20B001
 Intel Corporate|181DEA
@@ -23053,7 +23160,6 @@ MODULAR COMPUTING TECHNOLOGIES|00C055
 Dunkermotoren GmbH|E41FE9
 Escort, Inc.|D8760A
 Intellion AG|487583
-Hewlett Packard Enterprise|904C81
 QDIQO Sp. z o.o.|8C3579
 WiFiSong|38C70A
 Cisco Systems, Inc|FCFBFB
@@ -23097,7 +23203,6 @@ Nokia|A492CB
 Hui Zhou Gaoshengda Technology Co.,LTD|C0D2F3
 OnePlus Technology (Shenzhen) Co., Ltd|64A2F9
 HUAWEI TECHNOLOGIES CO.,LTD|A87D12
-Hewlett Packard Enterprise|B88303
 Elvaco AB|94193A
 Zyxel Communications Corporation|BC9911
 Konze System Technology Co.,Ltd.|280245
@@ -23195,7 +23300,6 @@ Dish Technologies Corp|0024AF
 Adamson Systems Engineering|C0A8F0
 IEEE Registration Authority|9C431E
 Somfy|4CC206
-Hewlett Packard Enterprise|040973
 Universal Flow Monitors, Inc.|3499D7
 ITEL MOBILE LIMITED|0C8BD3
 HUAWEI TECHNOLOGIES CO.,LTD|E8ABF3
@@ -23225,7 +23329,6 @@ Ross Video Limited|000F9B
 Texas Instruments|0024BA
 TCT mobile ltd|60512C
 Syszone Co., Ltd.|64DB81
-Hewlett Packard Enterprise|3817C3
 Texas Instruments|1CDF52
 Xiaomi Communications Co Ltd|04B167
 Microsoft Corporation|EC8350
@@ -23288,7 +23391,6 @@ KYOCERA CORPORATION |80739F
 silicon valley immigration service |28840E
 Mitsubishi Precision Co.,LTd.|080070
 KYOCERA CORPORATION |C421C8
-Hewlett Packard Enterprise|ECEBB8
 Beijing Sinead Technology Co., Ltd. |80615F
 ARRIS Group, Inc.|BC2E48
 ARRIS Group, Inc.|608CE6
@@ -23364,7 +23466,6 @@ Sichuan iLink Technology Co., Ltd.|BC1C81
 Taicang T&W Electronics|900A1A
 Innocent Technology Co., Ltd.|506E92
 Nokia|30FE31
-Hewlett Packard Enterprise|98F2B3
 Gemtek Technology Co., Ltd.|E8E1E1
 GUANGZHOU WINSOUND INFORMATION TECHNOLOGY CO.,LTD.|28070D
 Zhejiang Xinzailing Technology co., ltd|B44F96
@@ -23426,7 +23527,6 @@ SensorTec-Canada|38F135
 Hangzhou H3C Technologies Co., Limited|AC7409
 Wistron Neweb Corporation|E037BF
 AIRSOUND Inc.|E81367
-Hewlett Packard Enterprise|F40343
 Microsoft Corporation|C49DED
 Snap, Inc.|98A40E
 Garland Technology|F093C5
@@ -23509,7 +23609,6 @@ Seiko Epson Corporation|AC1826
 Seiko Epson Corporation|A4EE57
 Beijing IQIYI Science & Technology Co., Ltd.|E4B005
 Xiaomi Communications Co Ltd|ACC1EE
-Hewlett Packard Enterprise|001438
 Microsoft Corporation|BC8385
 Hon Hai Precision Ind. Co.,Ltd.|B05216
 Zhejiang Dahua Technology Co., Ltd.|14A78B
@@ -24101,7 +24200,6 @@ Ericsson AB|3C197D
 2Wire Inc|00253C
 vivo Mobile Communication Co., Ltd.|F42981
 Miovision Technologies Incorporated|84F6FA
-Hewlett Packard Enterprise|70106F
 Ruckus Wireless|F8E71E
 Texas Instruments|001783
 Texas Instruments|34B1F7
@@ -25933,7 +26031,6 @@ COVAX  Co. Ltd|001C6B
 Terra|001CA3
 Win4NET|001CA6
 Audiomatica Srl|001CA9
-AKAMAI TECHNOLOGIES, INC.|001CA1
 King Champion (Hong Kong) Limited|001CD2
 By Techdesign|001CCE
 Design Solutions Inc.|001D03
@@ -27955,7 +28052,51 @@ zte corporation|64BAA4
 HUAWEI TECHNOLOGIES CO.,LTD|C457CD
 Silicon Laboratories|08DDEB
 Private|3824F1
+Apple, Inc.|BCBB58
+Apple, Inc.|303B7C
+Apple, Inc.|00812A
+Apple, Inc.|1CE209
+NEXSEC Incorporated|6CC41E
 Cisco Systems, Inc|CC6A33
+Apple, Inc.|40D160
+Quectel Wireless Solutions Co.,Ltd.|900371
+zte corporation|949F8B
+Sercomm Japan Corporation|18EFC0
+Sonova AG|80283C
+TP-LINK TECHNOLOGIES CO.,LTD.|80AE54
+EM Microelectronic|F46ED6
+Hui Zhou Gaoshengda Technology Co.,LTD|948CD7
+creoline GmbH|48E9CA
+Power Plus Communications AG|3C0868
+IEEE Registration Authority|901564
+KanEL Sweden AB|408F9A
+Akamai Technologies Inc.|001CA1
+Inagile Electronic Technology Co.,LTD.|507973
+Aditya Infotech Ltd.|5C3548
+Fiber Groep B.V.|20500F
+LCFC(HeFei) Electronics Technology co., ltd|C4C6E6
+Hosiden Corporation|D009F5
+Cisco Systems, Inc|D47F35
+China Mobile Group Device Co.,Ltd.|88DA18
+Boxin Communications Limited Liability Company|98CB38
+zte corporation|30C6AB
+Silicon Laboratories|286847
+IEEE Registration Authority|48E663
+HORYS TECHNOLOGIES LLC|DCECE3
+Hewlett Packard Enterprise – WW Corporate Headquarters|54778A
+Hewlett Packard Enterprise – WW Corporate Headquarters|D4F5EF
+Hewlett Packard Enterprise – WW Corporate Headquarters|08F1EA
+Hewlett Packard Enterprise – WW Corporate Headquarters|9C8CD8
+Hewlett Packard Enterprise – WW Corporate Headquarters|548028
+Hewlett Packard Enterprise – WW Corporate Headquarters|904C81
+Hewlett Packard Enterprise – WW Corporate Headquarters|B88303
+Hewlett Packard Enterprise – WW Corporate Headquarters|040973
+Hewlett Packard Enterprise – WW Corporate Headquarters|3817C3
+Hewlett Packard Enterprise – WW Corporate Headquarters|ECEBB8
+Hewlett Packard Enterprise – WW Corporate Headquarters|98F2B3
+Hewlett Packard Enterprise – WW Corporate Headquarters|F40343
+Hewlett Packard Enterprise – WW Corporate Headquarters|001438
+Hewlett Packard Enterprise – WW Corporate Headquarters|70106F
 IEEE Registration Authority|C85CE2
 ADT Technology|DCEE14
 Beijing Xiaomi Mobile Software Co., Ltd|E84A54
@@ -28432,7 +28573,6 @@ CLOUD NETWORK TECHNOLOGY SINGAPORE PTE. LTD.|4C82A9
 Cisco Systems, Inc|0CAF31
 Ubee Interactive Co., Limited|647C34
 Ubee Interactive Co., Limited|6C38A1
-FCNT LMITED|B8D0F0
 TECNO MOBILE LIMITED|F0C745
 SHENZHEN BILIAN ELECTRONIC CO.，LTD|B46DC2
 INGRAM MICRO SERVICES|ACCF7B
@@ -28490,7 +28630,6 @@ Siliconware Precision Industries Co., Ltd.|1816E8
 Cisco Systems, Inc|CC79D7
 Cisco Systems, Inc|E4387E
 BrightSign LLC|90AC3F
-Teleepoch Ltd|98348C
 Samsung Electronics Co.,Ltd|CCE686
 Samsung Electronics Co.,Ltd|74190A
 Qisda Corporation|C0C4F9
@@ -28955,7 +29094,6 @@ Sagemcom Broadband SAS|506F0C
 Huawei Device Co., Ltd.|08E7E5
 New H3C Technologies Co., Ltd|487397
 Icomera|40406C
-Hewlett Packard Enterprise|303FBB
 WILOGY SRL|701F0B
 Comtrend Corporation|A01842
 WEIFANG GOERTEK ELECTRONICS CO.,LTD|48188D
@@ -29016,7 +29154,6 @@ Cisco Systems, Inc|A47806
 HUAWEI TECHNOLOGIES CO.,LTD|28FBAE
 HUAWEI TECHNOLOGIES CO.,LTD|88A0BE
 HUAWEI TECHNOLOGIES CO.,LTD|949010
-Hewlett Packard Enterprise|9CDC71
 Kivo Technology, Inc.|E8DA00
 Intel Corporate|086AC5
 Palo Alto Networks|8C367A
@@ -29491,7 +29628,6 @@ ARRIS Group, Inc.|A0687E
 ARRIS Group, Inc.|A8705D
 1MORE|9C9789
 GE Lighting|786DEB
-Hewlett Packard Enterprise|88E9A4
 APTIV SERVICES US, LLC|2863BD
 Khwahish Technologies Private Limited|C402E1
 ASKEY COMPUTER CORP|F85B3B
@@ -29770,7 +29906,6 @@ Nokia|147BAC
 Dragonchip Limited|CCDC55
 Intel Corporate|A4C3F0
 IEEE Registration Authority|745BC5
-Hewlett Packard Enterprise|9440C9
 BXB ELECTRONICS CO., LTD|906D05
 vivo Mobile Communication Co., Ltd.|D4BBC8
 GUANGDONG OPPO MOBILE TELECOMMUNICATIONS CORP.,LTD|489507
@@ -30357,7 +30492,6 @@ AMPAK Technology, Inc.|CC4B73
 Palo Alto Networks|001B17
 Palo Alto Networks|58493B
 Palo Alto Networks|786D94
-Hewlett Packard Enterprise|943FC2
 Logitech|C8DB26
 Facebook Inc|A40E2B
 Shenzhen JingHanDa Electronics Co.Ltd|AC4E2E
@@ -30517,7 +30651,6 @@ Ruckus Wireless|D838FC
 IEEE Registration Authority|A4580F
 Verkada Inc|E0A700
 Fiberhome Telecommunication Technologies Co.,LTD|48F97C
-Hewlett Packard Enterprise|40B93C
 HUAWEI TECHNOLOGIES CO.,LTD|C0BFC0
 Super Micro Computer, Inc.|003048
 Lesira Manufacturing Pty Ltd|9CD9CB
@@ -30676,7 +30809,6 @@ MitraStar Technology Corp.|345760
 IEEE Registration Authority|C0D391
 Chongqing Miedu Technology Co., Ltd.|D49B5C
 NHN Entertainment|BC8AA3
-Hewlett Packard Enterprise|A8BD27
 Snuza International Pty. Ltd.|44D6E1
 Vestel Elektronik San ve Tic. A.S.|486DBB
 Cisco Systems, Inc|002A10
@@ -30876,7 +31008,6 @@ LaonPeople|1000FD
 DataCore Software Corporation|449F7F
 Hangzhou Zero Zero Technology Co., Ltd.|848319
 Intel Corporate|7CB0C2
-Hewlett Packard Enterprise|D89403
 Cisco Systems, Inc|E00EDA
 Sonifex Ltd.|D0A4B1
 Kaminario, Ltd.|0024F4
@@ -30920,7 +31051,6 @@ TRANSWARE|00409C
 Cisco Systems, Inc|042AE2
 Elentec|649968
 ARRIS Group, Inc.|986B3D
-Hewlett Packard Enterprise|E0071B
 Borqs Beijing Ltd.|84FEDC
 Samsung Electronics Co.,Ltd|1C3ADE
 Lookit Technology Co., Ltd|002360
@@ -32670,7 +32800,6 @@ NDS Surgical Imaging|0024F5
 HYBUS CO., LTD.|00248B
 Motorola, Broadband Solutions Group|002492
 Bang and Olufsen Medicom a/s|002484
-Meteocontrol GmbH|002480
 IlSung Precision|0024D8
 Willow Garage, Inc.|0024CD
 QUALICA Inc.|0024D3
@@ -32779,7 +32908,6 @@ Nintendo Co., Ltd.|0022AA
 Ouman Oy|0022A8
 TimeKeeping Systems, Inc.|002223
 Audio Precision|00221A
-AKAMAI TECHNOLOGIES INC|002218
 PCI CORPORATION|002213
 Cisco Systems, Inc|0021D8
 Cisco Systems, Inc|0021D7
@@ -34314,7 +34442,6 @@ ArrayComm, Inc.|0010E2
 IBM Corp|000629
 ADHOC TECHNOLOGIES|0010A9
 RION CO., LTD.|001050
-M-SYSTEM CO., LTD.|00109C
 VOLAMP, LTD.|0010CE
 COACTIVE AESTHETICS|0010B2
 TADIRAN COM. LTD.|00106E
@@ -34754,7 +34881,6 @@ Apple, Inc.|70BB5B
 Apple, Inc.|740EA4
 Apple, Inc.|6057C8
 Gen IV Technology LLC|D4413F
-Lumentum|00019C
 HUAWEI TECHNOLOGIES CO.,LTD|D0D7BE
 Huawei Device Co., Ltd.|206BF4
 Huawei Device Co., Ltd.|E82BC5
@@ -34925,7 +35051,6 @@ H1-Radio co.,ltd|38F45E
 TP-LINK CORPORATION PTE. LTD.|74FECE
 Murata Manufacturing Co., Ltd.|78F505
 MITSUBISHI ELECTRIC AUTOMATION (CHINA) LTD.|588D39
-REMOTESOLUTION|94BE50
 MOTOROLA SOLUTIONS MALAYSIA SDN. BHD.|B8E28C
 Fiberhome Telecommunication Technologies Co.,LTD|B8F774
 zte corporation|E0DAD7
@@ -34939,8 +35064,54 @@ Woven By Toyota U.S., Inc.|444963
 Ruijie Networks Co.,LTD|C0A476
 Home Control Singapore Pte Ltd|6074B1
 IEEE Registration Authority|34C8D6
+Shenzhen Sundray Technologies Company Limited|102F6E
+New H3C Intelligence Terminal Co., Ltd.|702AD7
 HUAWEI TECHNOLOGIES CO.,LTD|281DFB
 HUAWEI TECHNOLOGIES CO.,LTD|0C238D
-HUAWEI TECHNOLOGIES CO.,LTD|DC6180
-Domus NTW CORP.|28DE59
 Bigleaf Networks Inc.|20019C
+HUAWEI TECHNOLOGIES CO.,LTD|DC6180
+FCNT LLC|B8D0F0
+Domus NTW CORP.|28DE59
+Steplock Access AB|684216
+CANON INC.|6CF2D8
+Shenzhen Skyworth Digital  Technology  CO., Ltd|D44D9F
+SERVERCOM (INDIA) PRIVATE LIMITED|9CD4A6
+zte corporation|ECC342
+Remote Solution|94BE50
+Apple, Inc.|AC0775
+Apple, Inc.|842F57
+China Mobile Group Device Co.,Ltd.|50CF56
+Palo Alto Networks|A427A5
+AVUTEC|A86308
+TERACOM TELEMATICA S.A|1881ED
+TP-LINK TECHNOLOGIES CO.,LTD.|245A5F
+MG Co., Ltd.|00109C
+SynaXG Technologies Pte. Ltd.|F0FC65
+Meteocontrol GmbH|002480
+SHENZHEN CHUANGWEI-RGB ELECTRONICS CO.,LTD|C4BD8D
+TOZO INC|944BF8
+Great Talent Technology Limited|98348C
+GOIP Global Services Pvt. Ltd.|989DB2
+Intel Corporate|985F41
+Intel Corporate|683421
+eero inc.|303A4A
+Akamai Technologies Inc.|002218
+Lumentum|00019C
+Realme Chongqing Mobile Telecommunications Corp.,Ltd.|AC3971
+PAX Computer Technology(Shenzhen) Ltd.|A044B7
+Fiberhome Telecommunication Technologies Co.,LTD|68E905
+Sagemcom Broadband SAS|30F600
+Samsung Electronics Co.,Ltd|34E3FB
+Fibocom Wireless Inc.|B05A44
+Technicolor (China) Technology Co., Ltd.|38F18F
+Med-Eng Holdings ULC|601D16
+Hewlett Packard Enterprise – WW Corporate Headquarters|303FBB
+Hewlett Packard Enterprise – WW Corporate Headquarters|9CDC71
+Hewlett Packard Enterprise – WW Corporate Headquarters|88E9A4
+Hewlett Packard Enterprise – WW Corporate Headquarters|9440C9
+Hewlett Packard Enterprise – WW Corporate Headquarters|943FC2
+Hewlett Packard Enterprise – WW Corporate Headquarters|40B93C
+Hewlett Packard Enterprise – WW Corporate Headquarters|A8BD27
+Hewlett Packard Enterprise – WW Corporate Headquarters|D89403
+Hewlett Packard Enterprise – WW Corporate Headquarters|E0071B
+Telink Semiconductor(Shanghai) Co.,Ltd|4099F6

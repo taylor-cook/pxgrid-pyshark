@@ -69,7 +69,8 @@ Additional arguments can be added to override default values (**use with caution
 --service <custom_pxgrid_service>
 --topic <custom_pxgrid_topic>
 ```
-**NOTE** Linux users will need to run as sudo due to live updates to pxgrid-pyshark pkg files
+**NOTE** If an existing DB file is found, option to append new data or wipe and start new.
+**NOTE** Linux users will need to run above commands as "sudo" due to live updates to pxgrid-pyshark pkg files.
 
 
 # ISE pxGrid Update Example
@@ -100,6 +101,8 @@ Endpoint detail updates sent to ISE via pxgrid-pyshark use the pxGrid 'context-i
 (config-ext-nacl)# 20 permit udp any any eq 1900
 (config-ext-nacl)# 30 permit udp any any eq 5060
 (config-ext-nacl)# 40 permit tcp any any eq 80
+(config-ext-nacl)# 50 permit tcp any any eq 8080
+(config-ext-nacl)# 60 permit udp any any eq 138
 (config-ext-nacl)# exit
 (config)#
 (config)# monitor session <id> type erspan-source
@@ -138,6 +141,9 @@ All Entries in the 'endpoints' table:
 ('42:99:21:XX:XX:XX', 'mDNS', '192.168.1.233', '', 'iPhone (24)', 'Unknown (randomized MAC)', 'iPhone 14 Pro Max', '', 'model=D74AP', '', '', 0, 80, 0, 80, 0, 80, 0, 0, '20:51:00', 0)
 ('28:56:5a:XX:XX:XX', 'mDNS', '192.168.1.132', '', 'Brother MFC-L5850DW series', 'Brother', 'Monochrome All-in-One Printer (2-sided, 42ppm)', '', 'usb_MDL=MFC-L5850DW series', '', '', 0, 80, 50, 80, 0, 80, 50, 0, '20:51:01', 0)
 ```
+# View Existing Database File #
+Check existing endpoint data already collected from live capture or existing PCAP parsing
+- pxgrid-pyshark-view
 
 # Limitations
 - Only inspects protocols listed above
@@ -146,6 +152,15 @@ All Entries in the 'endpoints' table:
 
 # Other Points
 - Repository only contains code for deployment on collectors.  Custom profile definitions within ISE based on observed data and custom policy rule creation in ISE referencing custom profiles is the responsibility of the Network Adminstrator and is beyond the scope of this code.
+
+#  Steps for installing in Ubuntu VM to run as Collector (Ubuntu 22.04 LTS)
+```
+sudo apt-get update
+sudo apt install python3-pip -y
+sudo apt install tshark -y
+(Select Yes)
+sudo pip install pxgrid-pyshark
+```
 
 #  Generate pxGrid Certificates From ISE
 

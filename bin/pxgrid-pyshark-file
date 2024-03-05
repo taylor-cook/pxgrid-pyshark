@@ -2,6 +2,8 @@
 import pyshark
 import time
 import logging
+import os
+import sys
 from pathlib import Path
 from pxgrid_pyshark import endpointsdb
 from pxgrid_pyshark import parser
@@ -60,7 +62,6 @@ def process_capture_file(capture_file, capture_filter):
         logger.debug(f'capture file not found: {capture_file}')
 
 if __name__ == '__main__':
-    ## Create the local DB file for storing parsed packets
 
     debugMode = True
 
@@ -77,9 +78,25 @@ if __name__ == '__main__':
             s_logger.addHandler(handler)
             s_logger.setLevel(logging.DEBUG)
     
-    logger.debug('building databases')
-    endpoints = endpointsdb()              ## Initialize the endpoints database
-    logger.debug('building databases complete')
+    ## Check if endpointsDB already exists
+    logger.debug('database check - started')
+    file_exists = os.path.exists('endpoint_database.db')
+    if file_exists:
+        endpoints = endpointsdb()
+        print('## EXISTING ENDPOINT DB DETECTED! ###')
+        append_DB = input('Re-use existing DB? (append new endpoint data to existing file) (yes/no): ').lower()
+        if append_DB == 'yes' or append_DB == 'y':
+            pass
+        elif append_DB == 'no' or append_DB == 'n':
+            endpoints.clear_database()
+            endpoints.create_database()
+        else:
+            print('invalid input')
+            sys.exit(0)
+    else:
+        endpoints = endpointsdb()
+        endpoints.create_database()
+    logger.debug('database check - complete')
 
     ### CAPTURE FILE ###
     print('#######################################')
@@ -93,10 +110,14 @@ if __name__ == '__main__':
     print('##      Analyzing capture file       ##')
     print('#######################################')
 
+    start_time = time.perf_counter()
     process_capture_file(filename, filter)
+    end_time = time.perf_counter()
+
 
     print('#######################################')
     print('##      Resulting Endpoint Data      ##')
     print('#######################################')
     endpoints.view_all_entries()
     endpoints.view_stats()
+    print(f"Execution Time : {end_time - start_time:0.6f}" )

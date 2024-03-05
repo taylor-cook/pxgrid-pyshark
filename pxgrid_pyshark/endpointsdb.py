@@ -12,12 +12,15 @@ class endpointsdb:
     def __init__(self, db_file='endpoint_database.db'):
         self.connection = sqlite3.connect(db_file)
         self.cursor = self.connection.cursor()
-        self.create_database()
+
+    def clear_database(self):
+        self.cursor.execute('DROP TABLE IF EXISTS endpoints')
+        logger.debug('clear endpooints DB - complete')
 
     ## Create table for holding endpoint data; remove table if already exists to avoid old data
     def create_database(self):
         logger.debug('create endpoints DB - starting')
-        self.cursor.execute('DROP TABLE IF EXISTS endpoints')
+        # self.cursor.execute('DROP TABLE IF EXISTS endpoints')
         self.cursor.execute('''
             CREATE TABLE IF NOT EXISTS endpoints (
                 mac TEXT PRIMARY KEY, protocol TEXT, ip TEXT,
@@ -115,12 +118,6 @@ class endpointsdb:
         print("All Entries in the 'endpoints' table:")
         for entry in entries:
             print(entry)
-
-    ## View all entries in local DB and return as object
-    async def get_all_entries(self):
-        self.cursor.execute('SELECT * FROM endpoints')
-        entries = self.cursor.fetchall()
-        return entries
     
     ## View all entries in local DB with records that have not been updated and return as object
     async def get_active_entries(self):
@@ -133,7 +130,6 @@ class endpointsdb:
         global ise_updates
         self.cursor.execute('UPDATE endpoints SET updated = 1 WHERE mac = ?', (mac,))
         ise_updates += 1
-
 
     def view_stats(self):
         logger.debug(f'Local DB records created: {records_created}')

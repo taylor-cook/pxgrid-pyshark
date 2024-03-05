@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+import sqlite3
+import os
+
+print("Searching local directory for 'endpoint_database.db' file from pxgrid-pyshark...")
+file_exists = os.path.exists('endpoint_database.db')
+if file_exists:
+    connection = sqlite3.connect('endpoint_database.db')
+    cursor = connection.cursor()
+    cursor.execute('SELECT * FROM endpoints')
+    entries = cursor.fetchall()
+
+    for entry in entries:
+        print(entry)
+else:
+    print("Local directory does not contain 'endpoint_database.db' file.")

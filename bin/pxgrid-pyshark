@@ -348,10 +348,31 @@ if __name__ == '__main__':
     loop.add_signal_handler(SIGINT, signal_handlers)
     loop.add_signal_handler(SIGTERM, signal_handlers)
 
+    ## Check if endpointsDB already exists
+    logger.debug('database check - started')
+    file_exists = os.path.exists('endpoint_database.db')
+    if file_exists:
+        endpoints = endpointsdb()
+        print('## EXISTING ENDPOINT DB DETECTED! ###')
+        append_DB = input('Re-use existing DB? (all existing and new endpoints in DB will be sent to ISE) (yes/no): ').lower()
+        if append_DB == 'yes' or append_DB == 'y':
+            pass
+        elif append_DB == 'no' or append_DB == 'n':
+            endpoints.clear_database()
+            endpoints.create_database()
+        else:
+            print('invalid input')
+            sys.exit(0)
+    else:
+        endpoints = endpointsdb()
+        endpoints.create_database()
+    logger.debug('database check - complete')
+
     ## Create the local DB file for storing parsed packets
-    logger.debug('building databases')
-    endpoints = endpointsdb()
-    logger.debug('building databases complete')
+    # logger.debug('building databases')
+    # endpoints = endpointsdb()
+    # endpoints.create_database()
+    # logger.debug('building databases complete')
 
     ## Begin the capture on the indicated interface (replace w/ relevant interface name)
     capture_running = True

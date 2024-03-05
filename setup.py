@@ -34,7 +34,8 @@ setup (
     packages=['pxgrid_pyshark'],
     scripts=[
         'bin/pxgrid-pyshark',
-        'bin/pxgrid-pyshark-file'
+        'bin/pxgrid-pyshark-file',
+        'bin/pxgrid-pyshark-view'
     ],
     author=__author__,
     author_email=__author_email__,

@@ -176,6 +176,7 @@
         "model=J2AAP":"iPad (3rd generation)",
         "model=J2AP":"iPad (3rd generation)",
         "model=J305AP":"Apple TV 4K (2nd generation)",
+        "model=J255AP":"Apple TV 4K (3rd generation)",
         "model=J307AP":"iPad Air (4th generation)",
         "model=J308AP":"iPad Air (4th generation)",
         "model=J310AP":"iPad mini (6th generation)",
@@ -478,7 +479,7 @@
         "md=MSS315":"Smart Wi-Fi Plug Mini"
     },
     "Funai Electric Co":{
-        "model=8617X":"32in Sanyo Roku TV"
+        "model=8617X":"Sanyo Roku TV 32in"
     },
     "Google":{
         "md=Chromecast":"Chromecast",
@@ -500,6 +501,10 @@
         "SM-G975U1":"Galaxy S10 Plus (128GB)",
         "SM-G975U2":"Galaxy S10 Plus",
         "SM-G975UC":"Galaxy S10 Plus"
+    },
+    "Netgear":{
+        "modelname=EX6100":"AC750 Dual Band Wifi Range Extender",
+        "modelname=EX6100v2":"AC750 Wifi Range Extender (v2)"
     },
     "NVIDIA":{
         "md=SHIELD Android TV":"SHIELD Android TV"
@@ -655,5 +660,25 @@
     },
     "Texas Instruments":{
         "md=Smart Bridge Pro 2":"Smart Bridge Pro 2"
+    },
+    "Vizio":{
+        "md=V405-H9":"Vizio SmartCast UHD TV 40in",
+        "md=V405-H19":"Vizio SmartCast UHD TV 40in",
+        "md=V435M-K04":"Vizio SmartCast UHD TV 43in",
+        "md=V505-H9":"Vizio SmartCast UHD TV 50in",
+        "md=V505-H19":"Vizio SmartCast UHD TV 50in",
+        "md=V505M-K09":"Vizio SmartCast UHD TV 50in",
+        "md=V555M-K01":"Vizio SmartCast UHD TV 55in",
+        "md=V585M-K01":"Vizio SmartCast UHD TV 58in",
+        "md=V605-H3":"Vizio SmartCast UHD TV 60in",
+        "md=V655-H4":"Vizio SmartCast UHD TV 65in",
+        "md=V655-H9":"Vizio SmartCast UHD TV 65in",
+        "md=V655-H19":"Vizio SmartCast UHD TV 65in",
+        "md=V655M-K03":"Vizio SmartCast UHD TV 65in",
+        "md=V655M-K04":"Vizio SmartCast UHD TV 65in",
+        "md=V705-H3":"Vizio SmartCast UHD TV 70in",
+        "md=V705-H13":"Vizio SmartCast UHD TV 70in",
+        "md=V705M-K03":"Vizio SmartCast UHD TV 70in",
+        "md=V755M-K03":"Vizio SmartCast UHD TV 75in"
     }
 }
