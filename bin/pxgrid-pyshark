@@ -27,7 +27,7 @@ skipped_packet = 0
 
 ## Create dict of supported protocols and their appropriate inspection functions
 packet_callbacks = {
-    'mdns': parser.parse_mdns,
+    'mdns': parser.parse_mdns_v7,
     'xml': parser.parse_xml,
     'sip': parser.parse_sip,
     'ssdp': parser.parse_ssdp,
@@ -98,7 +98,7 @@ def capture_live_packets(network_interface, bpf_filter):
     currentPacket = 0
     capture = pyshark.LiveCapture(interface=network_interface, bpf_filter=bpf_filter, include_raw=True, use_json=True, output_file='/tmp/pyshark.pcapng')
     logger.debug(f'beginning capture instance to file: {capture._output_file}')
-    for packet in capture.sniff_continuously(packet_count=2000000):
+    for packet in capture.sniff_continuously(packet_count=200000):
         try:
             highest_layer = packet.highest_layer
             if highest_layer not in ['DATA_RAW', 'TCP_RAW', 'UDP_RAW', 'JSON_RAW', 'DATA-TEXT-LINES_RAW', 'IMAGE-GIF_RAW', 'IMAGE-JFIF_RAW', 'PNG-RAW']:
