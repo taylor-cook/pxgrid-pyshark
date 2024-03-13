@@ -10,12 +10,12 @@ from pxgrid_pyshark import parser
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
-default_filter = '!ipv6 && (ssdp || (http && http.user_agent != "") || sip || xml || browser || (mdns && dns.resp.type == 16))'
+default_filter = '!ipv6 && (ssdp || (http && http.user_agent != "") || sip || xml || browser || (mdns && (dns.resp.type == 1 || dns.resp.type == 16)))'
 parser = parser()
 currentPacket = 0
 
 packet_callbacks = {
-    'mdns': parser.parse_mdns,
+    'mdns': parser.parse_mdns_v7,
     'xml': parser.parse_xml,
     'sip': parser.parse_sip,
     'ssdp': parser.parse_ssdp,
